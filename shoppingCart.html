@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt" value="">
+    <input type="button" id="btn" value="登录">
+</body>
+</html>
+<script src="../../day3/jquery.js"></script>
+<script>
+    $.fn.extend({
+        a:function(){
+            $("#btn").click(function(){
+                if($("#txt").val() != ""){
+                    alert("大傻逼啊");
+                }
+            })
+        }
+    })
+    $("#btn").a();
+
+</script>

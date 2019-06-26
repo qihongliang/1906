@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ol,li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .container{
+            width: 928px;
+            margin: 0 auto;
+        }
+        .header{
+            padding: 10px;
+            background: #eeeeee;
+            overflow: hidden;
+        }
+        .header a{
+            float: right;
+            color: red;
+            border: 1px solod red;
+            padding: 4px 8px;
+            line-height: 30px;
+        }
+        .link{
+            padding: 10px 0;
+        }
+        .list{
+            overflow: hidden;
+        }
+        .list .goods{
+            float: left;
+            margin: 0 10px 20px;
+            width: 200px;
+            border: 1px solid red;
+            cursor: pointer;
+        }
+        .list .goods:hover{
+            border: 1px solid red;
+        }
+        .list .goods img{
+            width: 200px;
+            height: 200px;
+            display: block;
+        }
+        .list .goods p{
+            color: red;
+            font-size: 14px;
+        }
+        .list .goods h3{
+            color: #333333;
+            font-size: 14px;
+        }
+        .list .goods div{
+            font-size: 16px;
+            padding: 4px 10px 4px 32px;
+            border: 1px solid red;
+            width: 88px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="shoppingCart.html">我的购物车</a>
+        </div>
+        <div class="link">首页 > 休闲鞋 > 帆布鞋</div>
+        <div class="list">
+            <div class="goods">
+                <img src="主页/1482233776849.png" alt="">
+                <p>￥168</p>
+                <h3>阿松大广泛士大夫</h3>
+                <div>加入购物车</div>
+            </div>
+            <div class="goods">
+                <img src="主页/2mZe24dH8YEGadCyvgsL.png" alt="">
+                <p>￥168</p>
+                <h3>阿松大广泛士大夫</h3>
+                <div>加入购物车</div>
+            </div>
+            <div class="goods">
+                <img src="主页/1482233776849.png" alt="">
+                <p>￥168</p>
+                <h3>阿松大广泛士大夫</h3>
+                <div>加入购物车</div>
+            </div>
+            <div class="goods">
+                <img src="主页/1482233776849.png" alt="">
+                <p>￥168</p>
+                <h3>阿松大广泛士大夫</h3>
+                <div>加入购物车</div>
+            </div>
+            <div class="goods">
+                <img src="主页/1540623612925.png" alt="">
+                <p>￥168</p>
+                <h3>阿松大广泛士大夫</h3>
+                <div>加入购物车</div>
+            </div>
+            <div class="goods">
+                <img src="主页/20180522101715775.jpg" alt="">
+                <p>￥168</p>
+                <h3>阿松大广泛士大夫</h3>
+                <div>加入购物车</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../../day3/jquery.js"></script>
+<script>
+    $(function(){
+        
+        $.ajax({
+            url:'goods.json',
+            type:'get',
+            dataType:'json',
+            success:function(json){
+                var results = '';
+                $.each(json,function(index,val){
+                    results +='<div class="goods"><img src="'+val.imgurl+'" alt=""><p>'+val.price+'</p><h3>'+val.title+'</h3><div>加入购物车</div></div>';
+                })
+                $('.list').html(results);
+            }
+        })
+
+
+    })
+</script>
